@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --semi-white: hsla(0, 0%, 100%, 0.75);
+  --semi-trans-white: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--very-dark-blue);
+  font-family: "Inter";
+}
+
+p {
+  font-size: 15px;
+  color: var(--semi-white);
+}
+
+h1 {
+  color: white;
+  font-weight: 700;
+}
+
+.title {
+  padding-top: 25px;
+}
+.title span {
+  color: var(--soft-violet);
+}
+
+.container {
+  display: flex;
+  border-radius: 8px;
+  background-color: var(--dark-desaturated-blue);
+  width: 55%;
+}
+
+.container .left {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.para {
+  padding-top: 20px;
+  padding-bottom: 55px;
+}
+
+.stats {
+  color: white;
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-bottom: 25px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat h1 {
+  font-size: 28px;
+}
+
+.stat span {
+  text-transform: uppercase;
+  color: var(--semi-trans-white);
+  font-family: "Lexend Deca";
+  font-size: 14px;
+}
+
+.left {
+  max-width: 55%;
+}
+.right {
+  max-width: 45%;
+  position: relative;
+  display: inline-block;
+}
+
+.right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(150, 122, 190, 0.35);
+  z-index: 1;
+}
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 2;
+}
+
+@media (max-width: 700px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .left {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .para, h1 {
+    max-width: 100%;
+    text-align: center;
+  }
+  .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stat {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+}
